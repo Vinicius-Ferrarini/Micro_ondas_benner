@@ -1,0 +1,28 @@
+# Pastas de compilação (Binários)
+[Bb]in/
+[Oo]bj/
+
+# Configurações do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ferramentas do .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publicação e pacotes
+publish/
+node_modules/
+/shared/
+
+# Segredos e configurações locais (MUITO IMPORTANTE)
+usersecrets.json
+appsettings.Development.json
+*.Secrets.json
+
+# Logs
+*.log
