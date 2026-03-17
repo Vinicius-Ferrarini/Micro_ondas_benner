@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MicroOndas.Dominio/MicroOndas.Dominio.csproj" />
+  <Project Path="MicroOndas.Web/MicroOndas.Web.csproj" />
+</Solution>
