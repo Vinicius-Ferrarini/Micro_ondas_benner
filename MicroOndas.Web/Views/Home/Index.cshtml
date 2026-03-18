@@ -1,8 +1,39 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model MicroOndas.Dominio.Forno
+
+@{
+    ViewData["Title"] = "Micro-ondas Digital";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-4">
+    <h2>Painel do Micro-ondas</h2>
+    
+    <div class="border p-4 d-inline-block bg-light rounded shadow">
+        
+        <div class="bg-dark text-success p-3 mb-4 rounded text-start" style="font-family: 'Courier New', Courier, monospace; font-size: 20px; min-width: 350px;">
+            <div><strong>Tempo:</strong> @Model.TempoEmSegundos segundos</div>
+            <div><strong>Potência:</strong> @Model.Potencia</div>
+            <div><strong>Status:</strong> @(Model.EmAquecimento ? "AQUECENDO" : "PARADO")</div>
+            <div class="mt-2 text-warning">@Model.StringInformativa</div>
+        </div>
+
+        <form method="post">
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="form-label">Tempo (Segundos)</label>
+                    <input type="number" name="tempo" class="form-control" placeholder="Ex: 90" />
+                </div>
+                <div class="col">
+                    <label class="form-label">Potência</label>
+                    <input type="number" name="potencia" class="form-control" value="10" />
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <button type="submit" formaction="/Home/Iniciar" class="btn btn-success">Iniciar</button>
+                <button type="submit" formaction="/Home/InicioRapido" class="btn btn-primary">Início Rápido (+30s)</button>
+                <button type="submit" formaction="/Home/PausarCancelar" class="btn btn-danger">Pausar / Cancelar</button>
+            </div>
+        </form>
+
+    </div>
 </div>
